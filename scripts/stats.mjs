@@ -47,6 +47,7 @@ async function collect() {
   }`);
 
   let stars = 0;
+  let privateRepos = 0;
   const langs = new Map();
   for (let after = null; ; ) {
     const page = await gql(
@@ -55,6 +56,7 @@ async function collect() {
           repositories(ownerAffiliations: OWNER, isFork: false, first: 100, after: $after) {
             pageInfo { hasNextPage endCursor }
             nodes {
+              isPrivate
               stargazerCount
               languages(first: 20) { edges { size node { name color } } }
             }
@@ -66,6 +68,7 @@ async function collect() {
     const { nodes, pageInfo } = page.viewer.repositories;
     for (const repo of nodes) {
       stars += repo.stargazerCount;
+      if (repo.isPrivate) privateRepos++;
       for (const { size, node } of repo.languages.edges) {
         if (HIDDEN_LANGS.has(node.name)) continue;
         const entry = langs.get(node.name) ?? { name: node.name, color: node.color ?? "#858585", size: 0 };
@@ -76,6 +79,8 @@ async function collect() {
     if (!pageInfo.hasNextPage) break;
     after = pageInfo.endCursor;
   }
+  // A token without private access would silently publish public-only numbers.
+  if (!privateRepos) throw new Error("Token can't see private repos; use a classic token with the repo scope");
 
   const commits = (await api(`https://api.github.com/search/commits?q=author:${viewer.login}&per_page=1`)).total_count;
 
