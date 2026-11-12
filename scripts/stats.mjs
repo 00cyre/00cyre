@@ -41,7 +41,10 @@ async function collect() {
       issues { totalCount }
       contributionsCollection {
         totalRepositoriesWithContributedCommits
-        contributionCalendar { totalContributions }
+        contributionCalendar {
+          totalContributions
+          weeks { contributionDays { date weekday contributionLevel } }
+        }
       }
     }
   }`);
@@ -98,6 +101,7 @@ async function collect() {
     issues: viewer.issues.totalCount,
     contributedTo: viewer.contributionsCollection.totalRepositoriesWithContributedCommits,
     yearContributions: viewer.contributionsCollection.contributionCalendar.totalContributions,
+    calendar: viewer.contributionsCollection.contributionCalendar.weeks,
     topLangs,
   };
 }
@@ -182,7 +186,60 @@ function langsCard(langs) {
   );
 }
 
+const LEVEL_COLORS = {
+  NONE: theme.track,
+  FIRST_QUARTILE: "#0e4429",
+  SECOND_QUARTILE: "#006d32",
+  THIRD_QUARTILE: "#26a641",
+  FOURTH_QUARTILE: "#39d353",
+};
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function calendarCard(weeks, total) {
+  const cell = 11;
+  const step = 14;
+  const left = 50;
+  const top = 72;
+  const width = left + weeks.length * step + 22;
+  const height = top + 7 * step + 38;
+
+  const cells = [];
+  const months = [];
+  weeks.forEach((week, w) => {
+    const x = left + w * step;
+    for (const day of week.contributionDays) {
+      const date = new Date(day.date);
+      // Label each month above the week that contains its 1st.
+      if (date.getUTCDate() === 1) months.push(`<text class="small" x="${x}" y="${top - 8}">${MONTHS[date.getUTCMonth()]}</text>`);
+      cells.push(`<rect x="${x}" y="${top + day.weekday * step}" width="${cell}" height="${cell}" rx="2" fill="${LEVEL_COLORS[day.contributionLevel]}"/>`);
+    }
+  });
+  const weekdays = [[1, "Mon"], [3, "Wed"], [5, "Fri"]]
+    .map(([d, label]) => `<text class="small" x="18" y="${top + d * step + 9}">${label}</text>`)
+    .join("");
+
+  const legendY = top + 7 * step + 14;
+  const boxesEnd = width - 22 - 34;
+  const boxesStart = boxesEnd - 5 * step + 3;
+  const legend = Object.values(LEVEL_COLORS)
+    .map((color, i) => `<rect x="${boxesStart + i * step}" y="${legendY}" width="${cell}" height="${cell}" rx="2" fill="${color}"/>`)
+    .join("");
+
+  return card(
+    width,
+    height,
+    `<text class="title" x="25" y="38">${num(total)} contributions in the last year</text>
+${months.join("")}
+${weekdays}
+${cells.join("")}
+<text class="small" x="${boxesStart - 6}" y="${legendY + 9}" text-anchor="end">Less</text>
+${legend}
+<text class="small" x="${width - 22}" y="${legendY + 9}" text-anchor="end">More</text>`,
+  );
+}
+
 const stats = await collect();
 await mkdir(new URL("../assets/", import.meta.url), { recursive: true });
 await writeFile(new URL("../assets/stats.svg", import.meta.url), statsCard(stats));
 await writeFile(new URL("../assets/langs.svg", import.meta.url), langsCard(stats.topLangs));
+await writeFile(new URL("../assets/calendar.svg", import.meta.url), calendarCard(stats.calendar, stats.yearContributions));
