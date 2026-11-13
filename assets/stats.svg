@@ -18,17 +18,17 @@
 <g class="row" transform="translate(25, 95)" style="animation-delay:300ms">
   <path transform="translate(0,-12)" fill="#bf91f3" fill-rule="evenodd" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
   <text class="label" x="25" y="0">Total Commits:</text>
-  <text class="value" x="220" y="0">2,354</text>
+  <text class="value" x="220" y="0">225</text>
 </g>
 <g class="row" transform="translate(25, 120)" style="animation-delay:450ms">
   <path transform="translate(0,-12)" fill="#bf91f3" fill-rule="evenodd" d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/>
   <text class="label" x="25" y="0">Total PRs:</text>
-  <text class="value" x="220" y="0">1,202</text>
+  <text class="value" x="220" y="0">15</text>
 </g>
 <g class="row" transform="translate(25, 145)" style="animation-delay:600ms">
   <path transform="translate(0,-12)" fill="#bf91f3" fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/>
   <text class="label" x="25" y="0">Total Issues:</text>
-  <text class="value" x="220" y="0">77</text>
+  <text class="value" x="220" y="0">3</text>
 </g>
 <g class="row" transform="translate(25, 170)" style="animation-delay:750ms">
   <path transform="translate(0,-12)" fill="#bf91f3" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
@@ -38,7 +38,7 @@
 <g transform="translate(390, 105)">
   <circle r="42" stroke="#2a2e42" stroke-width="6"/>
   <circle r="42" stroke="#70a5fd" stroke-width="6" stroke-linecap="round"/>
-  <text class="big" text-anchor="middle" y="4">3,006</text>
+  <text class="big" text-anchor="middle" y="4">3,012</text>
   <text class="small" text-anchor="middle" y="22">this year</text>
 </g>
 </svg>
