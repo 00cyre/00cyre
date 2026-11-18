@@ -38,7 +38,7 @@
 <g transform="translate(390, 105)">
   <circle r="42" stroke="#2a2e42" stroke-width="6"/>
   <circle r="42" stroke="#70a5fd" stroke-width="6" stroke-linecap="round"/>
-  <text class="big" text-anchor="middle" y="4">3,269</text>
+  <text class="big" text-anchor="middle" y="4">3,285</text>
   <text class="small" text-anchor="middle" y="22">this year</text>
 </g>
 </svg>
