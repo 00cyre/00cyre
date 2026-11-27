@@ -11,10 +11,10 @@
 <rect width="300" height="195" rx="16" fill="#1a1b27"/>
 <text class="title" x="25" y="38">Most Used Languages</text>
 <clipPath id="bar"><rect x="25" y="58" width="250" height="8" rx="4"/></clipPath>
-<g clip-path="url(#bar)" transform="translate(25, 58)"><rect x="0.00" y="0" width="85.42" height="8" fill="#3178c6"/><rect x="85.42" y="0" width="75.34" height="8" fill="#f1e05a"/><rect x="160.77" y="0" width="48.94" height="8" fill="#F05138"/><rect x="209.70" y="0" width="21.66" height="8" fill="#3572A5"/><rect x="231.36" y="0" width="6.88" height="8" fill="#7355dd"/><rect x="238.24" y="0" width="6.31" height="8" fill="#89e051"/><rect x="244.54" y="0" width="4.49" height="8" fill="#00A2FF"/><rect x="249.04" y="0" width="2.00" height="8" fill="#384d54"/></g>
+<g clip-path="url(#bar)" transform="translate(25, 58)"><rect x="0.00" y="0" width="85.25" height="8" fill="#3178c6"/><rect x="85.25" y="0" width="75.20" height="8" fill="#f1e05a"/><rect x="160.45" y="0" width="49.34" height="8" fill="#F05138"/><rect x="209.79" y="0" width="21.61" height="8" fill="#3572A5"/><rect x="231.40" y="0" width="6.86" height="8" fill="#7355dd"/><rect x="238.26" y="0" width="6.29" height="8" fill="#89e051"/><rect x="244.56" y="0" width="4.48" height="8" fill="#00A2FF"/><rect x="249.04" y="0" width="2.00" height="8" fill="#384d54"/></g>
 <g transform="translate(25, 82)"><g class="row" transform="translate(0, 0)" style="animation-delay:150ms">
   <circle cx="5" cy="6" r="5" fill="#3178c6"/>
-  <text class="small" x="15" y="10">TypeScript 34.2%</text>
+  <text class="small" x="15" y="10">TypeScript 34.1%</text>
 </g>
 <g class="row" transform="translate(130, 0)" style="animation-delay:250ms">
   <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
@@ -22,15 +22,15 @@
 </g>
 <g class="row" transform="translate(0, 25)" style="animation-delay:350ms">
   <circle cx="5" cy="6" r="5" fill="#F05138"/>
-  <text class="small" x="15" y="10">Swift 19.6%</text>
+  <text class="small" x="15" y="10">Swift 19.7%</text>
 </g>
 <g class="row" transform="translate(130, 25)" style="animation-delay:450ms">
   <circle cx="5" cy="6" r="5" fill="#3572A5"/>
-  <text class="small" x="15" y="10">Python 8.7%</text>
+  <text class="small" x="15" y="10">Python 8.6%</text>
 </g>
 <g class="row" transform="translate(0, 50)" style="animation-delay:550ms">
   <circle cx="5" cy="6" r="5" fill="#7355dd"/>
-  <text class="small" x="15" y="10">C# 2.8%</text>
+  <text class="small" x="15" y="10">C# 2.7%</text>
 </g>
 <g class="row" transform="translate(130, 50)" style="animation-delay:650ms">
   <circle cx="5" cy="6" r="5" fill="#89e051"/>
